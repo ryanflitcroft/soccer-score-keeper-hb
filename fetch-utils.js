@@ -5,8 +5,14 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function createGame(game){
     const newGame = { ...game };
-
+    // console.log(newGame);
+    const response = await client
+        .from('games')
+        .insert(
+            newGame
+        );
     // create a single new game in the games table using the above object
+    // console.log(response.data);
     
     return checkError(response);
 }
@@ -14,7 +20,10 @@ export async function createGame(game){
 
 export async function getGames() {
     // select all games from the games table
-
+    const response = await client
+        .from('games')
+        .select();
+        // console.log(response.data);
     return checkError(response);    
 }
 
