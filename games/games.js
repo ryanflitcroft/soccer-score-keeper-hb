@@ -85,7 +85,7 @@ logoutButton.addEventListener('click', () => {
 });
 
 window.addEventListener('load', async() => {
-    displayAllGames();
+    await displayAllGames();
 });
 
 
