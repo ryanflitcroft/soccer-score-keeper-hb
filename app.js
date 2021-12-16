@@ -12,7 +12,6 @@ const signUpForm = document.getElementById('sign-up');
 const signUpEmail = document.getElementById('sign-up-email');
 const signUpPassword = document.getElementById('sign-up-password');
 
-// if user currently logged in, redirect
 redirectToGames();
 
 signUpForm.addEventListener('submit', async(event)=>{
@@ -22,6 +21,7 @@ signUpForm.addEventListener('submit', async(event)=>{
     if (user){
         redirectToGames();
     } else {
+        // eslint-disable-next-line no-console
         console.error(user);
     }
 });
@@ -33,6 +33,7 @@ signInForm.addEventListener('submit', async(event)=>{
     if (user){
         redirectToGames();
     } else {
+        // eslint-disable-next-line no-console
         console.error(user);
     }
 });
